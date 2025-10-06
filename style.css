@@ -1,0 +1,4 @@
+/* This file is for standard CSS rules that do not require Tailwind's @apply directive. */
+body {
+    font-family: 'Inter', sans-serif;
+}

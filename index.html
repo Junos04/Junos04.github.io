@@ -8,42 +8,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style type="text/tailwindcss">
-        body {
-            font-family: 'Inter', sans-serif;
-        }
         .section-title {
             @apply text-2xl font-bold text-black mb-6 border-b-2 border-black pb-2;
         }
         .card {
-            @apply bg-white rounded-lg shadow-md p-6 transition-transform duration-300 hover:scale-105;
+            @apply bg-white rounded-lg shadow-md p-6 transition-transform duration-300 hover:scale-105 border;
+        }
+        .nav-link {
+            @apply text-gray-600 hover:text-black;
+        }
+        .btn-primary {
+            @apply bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors;
+        }
+        .btn-secondary {
+            @apply border-2 border-black text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-white transition-colors;
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-    <!-- Header Section -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-black">Juno Song</a>
             <div class="hidden md:flex items-center space-x-4">
-                <a href="#about" class="text-gray-600 hover:text-black">About</a>
-                <a href="#skills" class="text-gray-600 hover:text-black">Skills</a>
-                <a href="#projects" class="text-gray-600 hover:text-black">Projects</a>
-                <a href="#experience" class="text-gray-600 hover:text-black">Experience</a>
-                <a href="#education" class="text-gray-600 hover:text-black">Education</a>
-                <a href="#contact" class="text-gray-600 hover:text-black">Contact</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main class="container mx-auto px-6 py-12">
 
-        <!-- Hero/About Section -->
         <section id="about" class="flex flex-col md:flex-row items-center mb-16">
             <div class="md:w-1/3 mb-8 md:mb-0 text-center">
-                <img src="https://placehold.co/256x256/E2E8F0/4A5568?text=Juno+Song" alt="Juno Song" class="rounded-full w-48 h-48 md:w-64 md:h-64 mx-auto object-cover shadow-lg">
+                <img src="assets/Juno.png" alt="Juno Song" class="rounded-full w-48 h-48 md:w-64 md:h-64 mx-auto object-cover shadow-lg">
             </div>
             <div class="md:w-2/3 md:pl-12">
                 <h1 class="text-4xl md:text-5xl font-bold text-black mb-2">Hello, I'm Juno Song</h1>
@@ -52,20 +56,19 @@
                     A dedicated Computer Science student at the University of Maryland with a passion for developing innovative solutions. Experienced in full-stack development through projects utilizing React and the Google Gemini API. Seeking to apply my skills in software engineering to create impactful technology.
                 </p>
                 <div class="flex space-x-4">
-                    <a href="https://www.linkedin.com/in/jsong04" target="_blank" class="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                    <a href="https://www.linkedin.com/in/jsong04" target="_blank" class="btn-primary">
                         View LinkedIn
                     </a>
-                    <a href="#contact" class="border-2 border-black text-black px-6 py-3 rounded-lg font-semibold hover:bg-black hover:text-white transition-colors">
+                    <a href="#contact" class="btn-secondary">
                         Contact Me
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="mb-16">
             <h2 class="section-title">Technical Skills</h2>
-            <div class="card border">
+            <div class="card">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div>
                         <h3 class="text-lg font-semibold text-black mb-2">Programming Languages</h3>
@@ -92,19 +95,16 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="mb-16">
             <h2 class="section-title">My Projects</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Project 1 -->
-                <div class="card border">
-                    <img src="https://placehold.co/600x400/3C366B/FFFFFF?text=Team+Albrt" alt="Team Albrt Project" class="rounded-t-lg w-full h-48 object-cover mb-4">
+                <div class="card">
+                    <img src="assets/Albrt.jpg" alt="Team Albrt Project" class="rounded-t-lg w-full h-48 object-cover mb-4">
                     <h3 class="text-xl font-bold text-black mb-2">Team Albrt – Wearable Navigational Aid</h3>
                     <p class="text-gray-600 mb-4">Researcher on a Gemstone Honors project developing an affordable, user-friendly wearable device to enhance navigation for the visually impaired using RGB-D and LiDAR sensors.</p>
                     <a href="https://albrt.umd.edu" target="_blank" class="text-black hover:underline font-semibold">View Project &rarr;</a>
                 </div>
-                <!-- Project 2 -->
-                <div class="card border">
+                <div class="card">
                     <img src="https://placehold.co/600x400/3C366B/FFFFFF?text=YummyBytes" alt="YummyBytes Project" class="rounded-t-lg w-full h-48 object-cover mb-4">
                     <h3 class="text-xl font-bold text-black mb-2">YummyBytes – AI Recipe Generator</h3>
                     <p class="text-gray-600 mb-4">A dynamic web application that generates unique recipes based on user-provided ingredients and preferences using the Google Gemini API and a responsive React UI.</p>
@@ -113,11 +113,10 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience" class="mb-16">
             <h2 class="section-title">Work Experience</h2>
             <div class="space-y-8">
-                <div class="card border">
+                <div class="card">
                     <div class="flex justify-between items-start">
                         <div>
                             <h3 class="text-xl font-bold text-black">Human Resources Assistant</h3>
@@ -131,7 +130,7 @@
                         <li>Support the complete employee lifecycle by assisting with onboarding/offboarding processes.</li>
                     </ul>
                 </div>
-                <div class="card border">
+                <div class="card">
                     <div class="flex justify-between items-start">
                         <div>
                             <h3 class="text-xl font-bold text-black">Classroom Field Technician</h3>
@@ -144,7 +143,7 @@
                         <li>Diagnosed and resolved hardware and software issues in complex classroom A/V systems.</li>
                     </ul>
                 </div>
-                 <div class="card border">
+                 <div class="card">
                     <div class="flex justify-between items-start">
                         <div>
                             <h3 class="text-xl font-bold text-black">Community Assistant</h3>
@@ -157,7 +156,7 @@
                         <li>Ensured the security and confidentiality of student records and packages.</li>
                     </ul>
                 </div>
-                <div class="card border">
+                <div class="card">
                     <div class="flex justify-between items-start">
                         <div>
                             <h3 class="text-xl font-bold text-black">EDTECH Intern</h3>
@@ -173,10 +172,9 @@
             </div>
         </section>
 
-        <!-- Education Section -->
         <section id="education" class="mb-16">
             <h2 class="section-title">Education</h2>
-            <div class="card border">
+            <div class="card">
                 <h3 class="text-xl font-bold text-black">University of Maryland, College Park</h3>
                 <p class="text-gray-800 font-semibold mb-2">Bachelor of Science in Computer Science, Minor in Korean Studies | Expected May 2027</p>
                 <p class="text-gray-600 mb-1"><strong>Cumulative GPA:</strong> 3.7/4.0</p>
@@ -186,25 +184,23 @@
             </div>
         </section>
         
-        <!-- Activities Section -->
         <section id="activities" class="mb-16">
              <h2 class="section-title">Activities & Leadership</h2>
-             <div class="card border">
+             <div class="card">
                  <h3 class="text-xl font-bold text-black">Collegiate Directions, Inc. (CDI)</h3>
                  <p class="text-gray-800 font-semibold mb-2">Scholar | 2020 – Present</p>
                  <p class="text-gray-600">Selected for a competitive college access and retention program for first-generation, low-income students. Actively engage in mentorship, academic workshops, and community service initiatives.</p>
              </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact">
             <h2 class="section-title">Get In Touch</h2>
-            <div class="card max-w-xl mx-auto text-center border">
+            <div class="card max-w-xl mx-auto text-center">
                  <p class="mb-6 text-gray-600">
                     I'm currently open to new opportunities. If you have a project in mind or just want to connect, feel free to reach out!
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                    <a href="mailto:junosong10@gmail.com" class="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors text-lg">
+                    <a href="mailto:junosong10@gmail.com" class="btn-primary text-lg px-8 py-4">
                         junosong10@gmail.com
                     </a>
                     <p class="text-lg font-semibold text-black">301-908-1691</p>
@@ -213,7 +209,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-white mt-16 py-8">
         <div class="container mx-auto px-6 text-center text-gray-600">
             <div class="flex justify-center space-x-6 mb-4">
@@ -223,7 +218,7 @@
             <p>&copy; 2025 Juno Song. All Rights Reserved.</p>
         </div>
     </footer>
-
+    
+    <script src="script.js"></script>
 </body>
 </html>
-
